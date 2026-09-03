@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medilink | Wholesale Medicines</title>
+    <link rel="stylesheet" href="/style/medicine.css">
+    <link rel="stylesheet" href="/style/medicine2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">
+
+             <i class="fa-solid fa-briefcase-medical"></i>
+
+             <span>Medilink</span>
+
+            </div>
+
+
+            <div class="nav-links">
+
+                <a href="/html/homepage.html">
+                    Home
+                </a>
+
+                <a href="/medicine.html" class="active">
+                    Medicines
+                </a>
+
+                <a href="/html/howitworks.html">
+                    How It Works
+                </a>
+
+                <a href="/html/contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <span class="cart-count">0</span>
+            </div>
+
+        </nav>
+
+        <section class="catalogue-heading">
+
+            <h1>
+                O . J <br>
+                Medicines Catalogue
+            </h1>
+
+            <p>
+                Browse our extensive inventory of high-quality
+                pharmaceutical products available for wholesale ordering.
+            </p>
+
+        </section>
+
+
+        <section class="search-categories">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+               <input
+                    type="search"
+                    id="medicine-search"
+                    placeholder="Search by medicine name...">
+
+            </div>
+
+            <div class="categories">
+
+                <button class="category-btn active" data-category="all">
+                    All Categories
+                </button>
+
+                <button class="category-btn" data-category="antibiotics">
+                    Antibiotics
+                </button>
+
+                <button class="category-btn" data-category="pain-relief">
+                    Pain Relief
+                </button>
+
+                <button class="category-btn" data-category="supplements">
+                    Supplements
+                </button>
+
+                <button class="category-btn" data-category="anti-malarials">
+                    Anti-malarials
+                </button>
+
+                <button class="category-btn" data-category="gastrointestinal">
+                    Gastrointestinal
+                </button>
+
+                <button class="category-btn" data-category="cardiovascular">
+                    Cardiovascular
+                </button>
+
+                <button class="category-btn" data-category="respiratory">
+                    Respiratory
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="medicinegrid">
+
+            <div class="medicine-grid">
+
+
+            </div>
+
+        </section>
+
+        <section class="writeorder">
+
+
+            <div class="writeorder-content">
+
+                <h2>
+                    Can't find what you're looking for?
+                </h2>
+
+                <p>
+                    Submit a custom sourcing request and our team will
+                    leverage our network to find it for you.
+                </p>
+
+
+                <form class="writeorder-form" id="writeorder-form">
+
+
+                    <div class="writeorder-row">
+
+                        <div class="form-group">
+
+                            <label for="medicine-name">
+                                Medicine Name
+                            </label>
+
+                            <textarea
+                                id="medicine-name"
+                                rows="5"
+                                placeholder="e.g.
+                                Paracetamol 500mg - 20 packs
+                                Amoxicillin 500mg - 10 packs
+                                Vitamin C - 5 packs"
+                                required></textarea>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="quantity-needed">
+                                Quantity Needed
+                            </label>
+
+                            <input
+                                type="text"
+                                id="quantity-needed"
+                                placeholder="e.g. 500 packs"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="medicine-details">
+                            Specifications & Details
+                        </label>
+
+                        <textarea
+                            id="medicine-details"
+                            placeholder="Any specific manufacturers, origins, or presentation formats required?"></textarea>
+
+                    </div>
+
+
+                    <button type="submit" id="custom-order-proceed" class="writeorder-btn">
+                        Proceed
+                    </button>
+
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <section id="custom-customer-section">
+
+            <div class="custom-customer-content">
+
+                <button
+                    type="button"
+                    class="close-customer-form"
+                    id="close-customer-form">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+
+                <div class="customer-check-icon">
+
+                    <i class="fa-solid fa-check"></i>
+
+                </div>
+
+
+                <h2>
+                    Customer Details
+                </h2>
+
+                <p>
+                    Enter your details so we can process your custom order.
+                </p>
+
+
+                <form id="custom-customer-form">
+
+                    <div class="customer-row">
+
+                        <div class="form-group">
+
+                            <label for="custom-customer-name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="custom-customer-name"
+                                placeholder="Enter your full name"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="custom-customer-phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="custom-customer-phone"
+                                placeholder="e.g. 08012345678"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="custom-delivery-address">
+                            Delivery Address
+                        </label>
+
+                        <textarea
+                            id="custom-delivery-address"
+                            placeholder="Enter your complete delivery address"
+                            required></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="custom-customer-state">
+                            State
+                        </label>
+
+                        <input
+                            type="text"
+                            id="custom-customer-state"
+                            placeholder="e.g. Lagos"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="custom-order-notes">
+                            Additional Notes
+                        </label>
+
+                        <textarea
+                            id="custom-order-notes"
+                            placeholder="Any additional information?"></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        id="custom-send-order">
+
+                        Send Order to WhatsApp
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <footer>
+
+
+
+            <div class="footer-content">
+
+
+                <!-- FOOTER BRAND -->
+
+                <div class="footer-about">
+
+                    <div class="footer-logo">
+
+                        <i class="fa-solid fa-briefcase-medical"></i>
+
+                        <span>Medilink</span>
+
+                    </div>
+
+                    <p>
+                        Reliable wholesale pharmaceutical marketplace
+                        ensuring efficiency and safety for pharmacies
+                        and suppliers.
+                    </p>
+
+                </div>
+
+
+                <!-- CONTACT -->
+
+                <div class="footer-column">
+
+                    <h3>Contact Us</h3>
+
+                    <a href="#">
+                        <i class="fa-solid fa-phone"></i>
+                        Phone
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-solid fa-envelope"></i>
+                        Email
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Location
+                    </a>
+
+                </div>
+
+
+                <!-- QUICK LINKS -->
+
+                <div class="footer-column">
+
+                    <h3>Quick Links</h3>
+
+                    <a href="/index.html">
+                        Home
+                    </a>
+
+                    <a href="/medicine.html">
+                        Medicines
+                    </a>
+
+                    <a href="/index.html#how-it-works">
+                        How It Works
+                    </a>
+
+                    <a href="/index.html#contact">
+                        Contact
+                    </a>
+
+                </div>
+
+
+                <!-- LEGAL -->
+
+                <div class="footer-column">
+
+                    <h3>Legal</h3>
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#">
+                        Terms of Service
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- COPYRIGHT -->
+
+            <div class="copyright">
+
+                <p>
+                    © 2026 Medilink Wholesale Pharmaceuticals.
+                    All rights reserved.
+                </p>
+
+            </div>
+
+            <a href="/html/adminlogin.html" class="adminlogin-button">
+                Admin
+            </a>
+
+
+
+        </footer>
+    </div>
+    <script type="module" src="/js/medicine.js"></script>
+    <script src="/js/medicinecart.js"></script>
+</body>
+</html>

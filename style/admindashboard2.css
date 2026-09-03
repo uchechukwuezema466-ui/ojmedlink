@@ -1,0 +1,757 @@
+/* ========================================
+   HIDE MEDICINES BY DEFAULT
+======================================== */
+
+.medicines-section {
+    display: none;
+}
+#orders{
+    display: none;
+}
+
+
+/* ========================================
+   SHOW MEDICINES WHEN ACTIVE
+======================================== */
+
+.medicines-section.show {
+    display: block;
+}
+
+/* ========================================
+   MEDICINES SECTION
+======================================== */
+.medicines-section {
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+
+/* ========================================
+   MEDICINES HEADING
+======================================== */
+
+.medicines-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+
+    margin-bottom: 18px;
+}
+
+
+.medicines-heading h2 {
+    color: #ffffff;
+    font-size: 22px;
+}
+
+
+/* ========================================
+   ADD MEDICINE BUTTON
+======================================== */
+
+.add-medicine-button {
+    height: 42px;
+
+    padding: 0 17px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #9cf7d0;
+    color: #07251e;
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.add-medicine-button:hover {
+    background-color: #79ddb5;
+
+    transform: translateY(-1px);
+}
+
+
+.add-medicine-button i {
+    font-size: 10px;
+}
+
+
+/* ========================================
+   MEDICINES TABLE
+======================================== */
+
+.medicines-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    background-color: #0c2421;
+
+    border: 1px solid #294842;
+
+    border-radius: 9px;
+}
+
+
+.medicines-table {
+    width: 100%;
+
+    min-width: 650px;
+
+    border-collapse: collapse;
+}
+
+
+.medicines-table th {
+    padding: 15px 18px;
+
+    background-color: #102c28;
+
+    color: #728581;
+
+    text-align: left;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.6px;
+
+    text-transform: uppercase;
+}
+
+
+.medicines-table td {
+    padding: 17px 18px;
+
+    border-top: 1px solid #1d3834;
+
+    color: #c8d5d1;
+
+    font-size: 12px;
+
+    vertical-align: middle;
+}
+
+
+.medicines-table tbody tr {
+    transition: 0.3s ease;
+}
+
+
+.medicines-table tbody tr:hover {
+    background-color: #0f2b28;
+}
+
+
+/* ========================================
+   MEDICINE STOCK STATUS
+======================================== */
+
+.medicine-stock {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 6px 9px;
+
+    border-radius: 5px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.medicine-stock.in-stock {
+    background-color: #123d33;
+
+    color: #9cf7d0;
+}
+
+
+.medicine-stock.low-stock {
+    background-color: #35351d;
+
+    color: #e2dc8f;
+}
+
+
+.medicine-stock.out-of-stock {
+    background-color: #351f1f;
+
+    color: #ff9b9b;
+}
+
+
+/* ========================================
+   MEDICINE ACTION BUTTON
+======================================== */
+
+.edit-medicine-button {
+    padding: 7px 12px;
+
+    border: 1px solid #31534b;
+
+    border-radius: 5px;
+
+    background-color: transparent;
+
+    color: #9cf7d0;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.edit-medicine-button:hover {
+    background-color: #12352f;
+
+    border-color: #4d796c;
+}
+
+
+/* ========================================
+   MEDICINES EMPTY STATE
+======================================== */
+
+.medicines-empty {
+    min-height: 190px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 35px 20px;
+
+    text-align: center;
+}
+
+
+.medicines-empty i {
+    margin-bottom: 15px;
+
+    color: #41685f;
+
+    font-size: 33px;
+}
+
+
+.medicines-empty h3 {
+    margin-bottom: 7px;
+
+    color: #ffffff;
+
+    font-size: 16px;
+}
+
+
+.medicines-empty p {
+    color: #728581;
+
+    font-size: 12px;
+}
+
+
+/* ========================================
+   MOBILE MEDICINES
+======================================== */
+
+@media (max-width: 750px) {
+
+    .medicines-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .add-medicine-button {
+        width: 100%;
+    }
+
+
+    .medicines-table-wrapper {
+        border-radius: 8px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .medicines-heading h2 {
+        font-size: 20px;
+    }
+
+
+    .add-medicine-button {
+        height: 40px;
+
+        font-size: 10px;
+    }
+
+}
+
+/* ========================================
+   ADD MEDICINE FORM
+======================================== */
+
+.add-medicine-form-wrapper {
+    display: none;
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 30px;
+
+    background-color: #0c2421;
+
+    border: 1px solid #294842;
+
+    border-radius: 9px;
+}
+
+
+/* Show form */
+
+.add-medicine-form-wrapper.show {
+    display: block;
+}
+
+
+/* ========================================
+   FORM HEADER
+======================================== */
+
+.add-medicine-form-header {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 28px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #1d3834;
+}
+
+
+.add-medicine-form-header h3 {
+    color: #ffffff;
+
+    font-size: 20px;
+}
+
+
+/* CLOSE BUTTON */
+
+.close-medicine-form {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: #102c28;
+
+    color: #829590;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.close-medicine-form:hover {
+    background-color: #183832;
+
+    color: #ffffff;
+}
+
+
+/* ========================================
+   FORM LAYOUT
+======================================== */
+
+#add-medicine-form {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+/* ========================================
+   FORM GROUP
+======================================== */
+
+.medicine-form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.medicine-form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+
+.medicine-form-group label {
+    color: #dce7e4;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+/* ========================================
+   INPUTS
+======================================== */
+
+.medicine-form-group input,
+.medicine-form-group textarea {
+    width: 100%;
+
+    border: 1px solid #31534b;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    background-color: #071a18;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition: 0.3s ease;
+}
+
+
+.medicine-form-group input {
+    height: 48px;
+
+    padding: 0 14px;
+}
+
+
+.medicine-form-group textarea {
+    min-height: 120px;
+
+    padding: 13px 14px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+
+.medicine-form-group input::placeholder,
+.medicine-form-group textarea::placeholder {
+    color: #60736f;
+}
+
+
+.medicine-form-group input:focus,
+.medicine-form-group textarea:focus {
+    border-color: #6fc5a4;
+
+    box-shadow:
+        0 0 0 3px rgba(111, 197, 164, 0.08);
+}
+
+
+/* ========================================
+   PRICE INPUT
+======================================== */
+
+.medicine-input-with-icon {
+    position: relative;
+
+    width: 100%;
+}
+
+
+.medicine-input-with-icon span {
+    position: absolute;
+
+    top: 50%;
+    left: 14px;
+
+    transform: translateY(-50%);
+
+    color: #6c8a83;
+
+    font-size: 13px;
+
+    pointer-events: none;
+}
+
+
+.medicine-input-with-icon input {
+    padding-left: 30px;
+}
+
+
+/* ========================================
+   FILE INPUT
+======================================== */
+
+.medicine-form-group input[type="file"] {
+    height: auto;
+
+    padding: 11px;
+
+    color: #829590;
+
+    cursor: pointer;
+}
+
+
+.medicine-form-group input[type="file"]::file-selector-button {
+    margin-right: 10px;
+
+    padding: 7px 11px;
+
+    border: 1px solid #31534b;
+
+    border-radius: 5px;
+
+    background-color: #12352f;
+
+    color: #9cf7d0;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+.medicine-form-group small {
+    color: #627570;
+
+    font-size: 10px;
+}
+
+
+/* ========================================
+   FORM ACTIONS
+======================================== */
+
+.medicine-form-actions {
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 8px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #1d3834;
+}
+
+
+/* CANCEL */
+
+.cancel-medicine-button {
+    height: 43px;
+
+    padding: 0 18px;
+
+    border: 1px solid #31534b;
+
+    border-radius: 6px;
+
+    background-color: transparent;
+
+    color: #829590;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.cancel-medicine-button:hover {
+    background-color: #102c28;
+
+    color: #ffffff;
+}
+
+
+/* SAVE */
+
+.save-medicine-button {
+    height: 43px;
+
+    padding: 0 20px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #9cf7d0;
+
+    color: #07251e;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.save-medicine-button:hover {
+    background-color: #79ddb5;
+
+    transform: translateY(-1px);
+}
+
+.delete-medicine-button {
+    margin-left: 6px;
+
+    padding: 7px 12px;
+
+    border: 1px solid #6d3737;
+
+    border-radius: 5px;
+
+    background-color: transparent;
+
+    color: #ff9b9b;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.delete-medicine-button:hover {
+    background-color: #321d1d;
+
+    border-color: #a65353;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 750px) {
+
+    #add-medicine-form {
+        grid-template-columns: 1fr;
+    }
+
+
+    .medicine-form-group.full-width {
+        grid-column: auto;
+    }
+
+
+    .medicine-form-actions {
+        grid-column: auto;
+
+        flex-direction: column;
+    }
+
+
+    .cancel-medicine-button,
+    .save-medicine-button {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .add-medicine-form-wrapper {
+        padding: 22px 18px;
+    }
+
+
+    .add-medicine-form-header h3 {
+        font-size: 18px;
+    }
+
+
+    .medicine-form-group input {
+        height: 46px;
+
+        font-size: 12px;
+    }
+
+
+    .medicine-form-group textarea {
+        font-size: 12px;
+    }
+
+}

@@ -1,0 +1,604 @@
+/* ========================================
+   CUSTOM ORDER - CUSTOMER DETAILS
+======================================== */
+
+.custom-customer-section{
+    display: none;
+}
+#custom-customer-section {
+    width: 86%;
+    max-width: 950px;
+
+    margin: 0 auto 80px;
+
+    padding: 45px;
+
+    background-color: #0c2421;
+
+    border: 1px solid #294842;
+
+    border-radius: 10px;
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+#custom-customer-section .custom-customer-content {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+#custom-customer-section h2 {
+    margin-bottom: 10px;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+#custom-customer-section .custom-customer-content > p {
+    max-width: 650px;
+
+    margin: 0 auto 35px;
+
+    color: #8fa29e;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+#custom-customer-form {
+    width: 100%;
+}
+
+
+/* ========================================
+   TWO COLUMN ROW
+======================================== */
+
+.customer-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 22px;
+
+    margin-bottom: 2px;
+}
+
+
+/* ========================================
+   FORM GROUP
+======================================== */
+
+#custom-customer-section .form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-bottom: 22px;
+}
+
+
+#custom-customer-section label {
+    color: #dce7e4;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* ========================================
+   INPUTS + TEXTAREAS
+======================================== */
+
+#custom-customer-section input,
+#custom-customer-section textarea {
+    width: 100%;
+
+    border: 1px solid #31534b;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    background-color: #071a18;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    padding: 13px 14px;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+#custom-customer-section input {
+    height: 50px;
+}
+
+
+#custom-customer-section textarea {
+    min-height: 120px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   PLACEHOLDER
+======================================== */
+
+#custom-customer-section input::placeholder,
+#custom-customer-section textarea::placeholder {
+    color: #60736f;
+
+    opacity: 1;
+}
+
+
+/* ========================================
+   FOCUS
+======================================== */
+
+#custom-customer-section input:focus,
+#custom-customer-section textarea:focus {
+    border-color: #6fc5a4;
+
+    box-shadow: 0 0 0 2px rgba(111, 197, 164, 0.08);
+}
+
+
+/* ========================================
+   SEND ORDER BUTTON
+======================================== */
+
+#custom-send-order {
+    width: 100%;
+
+    height: 48px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #9cf7d0;
+
+    color: #07251e;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+#custom-send-order:hover {
+    background-color: #79ddb5;
+
+    transform: translateY(-1px);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 800px) {
+
+    #custom-customer-section {
+        width: 90%;
+
+        padding: 35px 25px;
+    }
+
+
+    #custom-customer-section h2 {
+        font-size: 24px;
+    }
+
+
+    .customer-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 520px) {
+
+    #custom-customer-section {
+        width: 90%;
+
+        padding: 28px 18px;
+    }
+
+
+    #custom-customer-section h2 {
+        font-size: 22px;
+    }
+
+
+    #custom-customer-section .custom-customer-content > p {
+        font-size: 13px;
+    }
+
+
+    #custom-customer-section input,
+    #custom-customer-section textarea {
+        font-size: 13px;
+    }
+
+
+    #custom-customer-section input {
+        height: 48px;
+    }
+
+
+    #custom-customer-section textarea {
+        min-height: 115px;
+    }
+
+
+    #custom-send-order {
+        height: 46px;
+    }
+
+}
+
+/* ========================================
+   CUSTOMER DETAILS MODAL
+======================================== */
+
+#custom-customer-section {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background-color: rgba(0, 0, 0, 0.72);
+
+    backdrop-filter: blur(4px);
+
+    z-index: 9999;
+}
+
+
+#custom-customer-section.show {
+    display: flex;
+}
+
+
+/* ========================================
+   MODAL BOX
+======================================== */
+
+.custom-customer-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 850px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 42px;
+
+    background-color: #ffffff;
+
+    border-radius: 14px;
+
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+}
+
+
+/* ========================================
+   CLOSE BUTTON
+======================================== */
+
+.close-customer-form {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: #edf3f1;
+
+    color: #38524b;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+
+.close-customer-form:hover {
+    background-color: #dce9e5;
+
+    transform: rotate(90deg);
+}
+
+
+/* ========================================
+   CHECK ICON
+======================================== */
+
+.customer-check-icon {
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #e4f8ef;
+
+    color: #18a873;
+
+    font-size: 20px;
+}
+
+
+/* ========================================
+   HEADING
+======================================== */
+
+.custom-customer-content h2 {
+    margin-bottom: 8px;
+
+    color: #0b2d26;
+
+    font-size: 28px;
+
+    line-height: 1.3;
+}
+
+
+.custom-customer-content > p {
+    margin-bottom: 30px;
+
+    color: #71827d;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+#custom-customer-form {
+    width: 100%;
+}
+
+
+.customer-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+#custom-customer-section .form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+
+#custom-customer-section label {
+    color: #25433c;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+#custom-customer-section input,
+#custom-customer-section textarea {
+    width: 100%;
+
+    border: 1px solid #d2dfda;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    background-color: #f8fbfa;
+
+    color: #17342d;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    padding: 13px 14px;
+
+    transition: 0.3s ease;
+}
+
+
+#custom-customer-section input {
+    height: 48px;
+}
+
+
+#custom-customer-section textarea {
+    min-height: 105px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+
+#custom-customer-section input::placeholder,
+#custom-customer-section textarea::placeholder {
+    color: #97a9a4;
+}
+
+
+#custom-customer-section input:focus,
+#custom-customer-section textarea:focus {
+    border-color: #6fc5a4;
+
+    background-color: #ffffff;
+
+    box-shadow: 0 0 0 3px rgba(111, 197, 164, 0.12);
+}
+
+
+/* ========================================
+   SEND BUTTON
+======================================== */
+
+#custom-send-order {
+    width: 100%;
+
+    height: 50px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background-color: #9cf7d0;
+
+    color: #07251e;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+#custom-send-order:hover {
+    background-color: #79ddb5;
+
+    transform: translateY(-1px);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    #custom-customer-section {
+        padding: 18px;
+    }
+
+
+    .custom-customer-content {
+        max-height: 94vh;
+
+        padding: 30px 22px;
+    }
+
+
+    .customer-row {
+        grid-template-columns: 1fr;
+    }
+
+
+    .custom-customer-content h2 {
+        font-size: 24px;
+    }
+
+
+    .customer-check-icon {
+        width: 42px;
+        height: 42px;
+
+        font-size: 17px;
+    }
+
+}

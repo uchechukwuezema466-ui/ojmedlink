@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>medilink-cart</title>
+    <link rel="stylesheet" href="/style/cartpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
+</head>
+<body>
+    
+    <div class="container">
+
+        <section class="cart-section" id="cart-section">
+
+            <h1>Your cart</h1>
+
+            <div id="cart-items"></div>
+
+            <div class="cart-summary">
+
+                <div class="summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="cart-subtotal">
+                        ₦0
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row total-row">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="cart-total">
+                        ₦0
+                    </strong>
+
+                </div>
+
+
+                <button id="proceed-order">
+                    Proceed to Order
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="order-section" id="order-section">
+
+            <div class="order-content">
+
+                <h2>
+                    Customer Details
+                </h2>
+
+                <p>
+                    Please provide your details so we can process your order.
+                </p>
+
+
+                <form id="order-form">
+
+                    <div class="order-row">
+
+                        <div class="form-group">
+
+                            <label for="customer-name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="customer-name"
+                                placeholder="Enter your full name"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="customer-phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="customer-phone"
+                                placeholder="e.g. 08012345678"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="delivery-address">
+                            Delivery Address
+                        </label>
+
+                        <textarea
+                            id="delivery-address"
+                            placeholder="Enter your complete delivery address"
+                            required></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="customer-state">
+                            State
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customer-state"
+                            placeholder="e.g. Lagos"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="order-notes">
+                            Additional Notes
+                        </label>
+
+                        <textarea
+                            id="order-notes"
+                            placeholder="Any additional information about your order?"></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        id="send-order">
+
+                        Send Order to WhatsApp
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </div>
+    
+
+    <script type="module" src="/js/cartpage.js"></script>
+</body>
+</html>

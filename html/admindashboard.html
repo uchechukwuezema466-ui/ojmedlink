@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medilink | Admin Dashboard</title>
+
+    <link rel="stylesheet" href="/style/admindashboard.css">
+    <link rel="stylesheet" href="/style/admindashboard2.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+
+        <!-- ========================================
+             SIDEBAR
+        ======================================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+
+                <div class="sidebar-logo">
+
+                    <i class="fa-solid fa-briefcase-medical"></i>
+
+                </div>
+
+                <div>
+
+                    <h1>
+                        Medilink
+                    </h1>
+
+                    <span>
+                        Admin Portal
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="#" class="sidebar-link active">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a href="#orders" class="sidebar-link">
+
+                    <i class="fa-solid fa-receipt"></i>
+
+                    <span>
+                        Orders
+                    </span>
+
+                </a>
+
+                <a href="#medicines" class="sidebar-link">
+
+                    <i class="fa-solid fa-pills"></i>
+
+                    <span>
+                        Medicines
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a
+                    href="/html/homepage.html"
+                    class="back-to-site">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back to website
+
+                </a>
+
+
+                <button
+                    type="button"
+                    id="logout-button"
+                    class="logout-button">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ========================================
+             MAIN CONTENT
+        ======================================== -->
+
+        <main class="dashboard-main">
+
+
+            <!-- ========================================
+                 TOP BAR
+            ======================================== -->
+
+            <header class="dashboard-header">
+
+                <div>
+
+                    <span class="page-label">
+                        Admin Dashboard
+                    </span>
+
+                    <h2>
+                        Overview
+                    </h2>
+
+                </div>
+
+
+                <div class="admin-profile">
+
+                    <div class="admin-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Administrator
+                        </strong>
+
+                        <span>
+                            Medilink Admin
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- ========================================
+                 ORDER STATISTICS
+            ======================================== -->
+
+            <section class="dashboard-section" id="dashboard">
+
+                <section class="stats-grid">
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-bag-shopping"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                New Orders
+                            </span>
+
+                            <strong id="new-orders-count">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-clock"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Processing
+                            </span>
+
+                            <strong id="processing-orders-count">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Completed
+                            </span>
+
+                            <strong id="completed-orders-count">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </section>
+
+            </section>
+
+
+
+            <!-- ========================================
+                 RECENT ORDERS
+            ======================================== -->
+
+            <section
+                class="orders-section"
+                id="orders">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="page-label">
+                            Order Management
+                        </span>
+
+                        <h2>
+                            Recent Orders
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="orders-table-wrapper">
+
+                    <table class="orders-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Order
+                                </th>
+
+                                <th>
+                                    Customer
+                                </th>
+
+                                <th>
+                                    Items
+                                </th>
+
+                                <th>
+                                    Total
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="orders-list">
+
+                            <!-- Firebase orders will appear here -->
+
+                        </tbody>
+
+                    </table>
+
+
+                    <!-- EMPTY STATE -->
+
+                    <div
+                        class="orders-empty"
+                        id="orders-empty">
+
+                        <i class="fa-solid fa-inbox"></i>
+
+                        <h3>
+                            No orders yet
+                        </h3>
+
+                        <p>
+                            Customer orders will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================
+                MEDICINES SECTION
+            ======================================== -->
+
+            <section
+                class="medicines-section"
+                id="medicines">
+
+
+                <div class="section-heading medicines-heading">
+
+                    <div>
+
+                        <span class="page-label">
+                            Medicine Management
+                        </span>
+
+                        <h2>
+                            Medicines
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="add-medicine-button"
+                        class="add-medicine-button">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add Medicine
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- ========================================
+                    MEDICINES TABLE
+                ======================================== -->
+
+                <div class="medicines-table-wrapper">
+
+                    <table class="medicines-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Medicine
+                                </th>
+
+                                <th>
+                                    Category
+                                </th>
+
+                                <th>
+                                    Price
+                                </th>
+
+                                <th>
+                                    Stock
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="medicines-list">
+
+                            <!-- Firebase medicines will appear here -->
+
+                        </tbody>
+
+                    </table>
+
+
+                    <!-- ========================================
+                        EMPTY STATE
+                    ======================================== -->
+
+                    <div
+                        class="medicines-empty"
+                        id="medicines-empty">
+
+                        <i class="fa-solid fa-pills"></i>
+
+                        <h3>
+                            No medicines added yet
+                        </h3>
+
+                        <p>
+                            Add medicines to make them available to customers.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- ========================================
+                    ADD MEDICINE FORM
+                ======================================== -->
+
+                <div
+                    class="add-medicine-form-wrapper"
+                    id="add-medicine-form-wrapper">
+
+                    <div class="add-medicine-form-header">
+
+                        <div>
+
+                            <span class="page-label">
+                                Medicine Management
+                            </span>
+
+                            <h3>
+                                Add New Medicine
+                            </h3>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="close-medicine-form"
+                            class="close-medicine-form">
+
+                            <i class="fa-solid fa-xmark"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <form id="add-medicine-form">
+
+
+                        <!-- MEDICINE NAME -->
+
+                        <div class="medicine-form-group">
+
+                            <label for="medicine-name">
+                                Medicine Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="medicine-name"
+                                placeholder="e.g. Paracetamol 500mg"
+                                required>
+
+                        </div>
+
+
+                        <!-- CATEGORY -->
+
+                        <div class="medicine-form-group">
+
+                            <label for="medicine-category">
+                                Category
+                            </label>
+
+                            <input
+                                type="text"
+                                id="medicine-category"
+                                placeholder="e.g. Pain Relief"
+                                required>
+
+                        </div>
+
+
+                        <!-- PRICE -->
+
+                        <div class="medicine-form-group">
+
+                            <label for="medicine-price">
+                                Price
+                            </label>
+
+                            <div class="medicine-input-with-icon">
+
+                                <span>
+                                    ₦
+                                </span>
+
+                                <input
+                                    type="number"
+                                    id="medicine-price"
+                                    placeholder="Enter price"
+                                    min="0"
+                                    step="0.01"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PACK SIZE -->
+
+                        <div class="medicine-form-group">
+
+                            <label for="medicine-pack-size">
+                                Pack Size
+                            </label>
+
+                            <input
+                                type="text"
+                                id="medicine-pack-size"
+                                placeholder="e.g. 10 x 10 tablets"
+                                required>
+
+                        </div>
+
+
+                        <!-- STOCK -->
+
+                        <div class="medicine-form-group">
+
+                            <label for="medicine-stock">
+                                Stock Quantity
+                            </label>
+
+                            <input
+                                type="number"
+                                id="medicine-stock"
+                                placeholder="Enter stock quantity"
+                                min="0"
+                                required>
+
+                        </div>
+
+
+                        <!-- DESCRIPTION -->
+
+                        <div class="medicine-form-group full-width">
+
+                            <label for="medicine-description">
+                                Description
+                            </label>
+
+                            <textarea
+                                id="medicine-description"
+                                placeholder="Write a short description of the medicine..."
+                                required></textarea>
+
+                        </div>
+
+
+                        <!-- IMAGE -->
+
+                        <!-- MEDICINE IMAGE URL -->
+
+                        <div class="medicine-form-group full-width">
+
+                            <label for="medicine-image-url">
+                                Medicine Image URL
+                            </label>
+
+                            <textarea
+                                id="medicine-image-url"
+                                placeholder="Paste the direct image URL here..."
+                                rows="3"
+                                required></textarea>
+
+                            <small>
+                                Copy the image address from the internet and paste it here.
+                            </small>
+
+                        </div>
+
+
+                        <!-- FORM BUTTONS -->
+
+                        <div class="medicine-form-actions">
+
+                            <button
+                                type="button"
+                                id="cancel-medicine-button"
+                                class="cancel-medicine-button">
+
+                                Cancel
+
+                            </button>
+
+
+                            <button
+                                type="submit"
+                                id="save-medicine-button"
+                                class="save-medicine-button">
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Save Medicine
+
+                            </button>
+
+                        </div>
+
+
+                    </form>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ========================================
+                 ORDER DETAILS PANEL
+            ======================================== -->
+
+            <section
+                class="order-details"
+                id="order-details">
+
+
+                <div class="details-header">
+
+                    <div>
+
+                        <span class="page-label">
+                            Order Details
+                        </span>
+
+                        <h2 id="details-order-number">
+                            Order #000
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="close-details"
+                        id="close-details">
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- CUSTOMER DETAILS -->
+
+                <div class="details-block">
+
+                    <h3>
+                        Customer Information
+                    </h3>
+
+
+                    <div class="customer-details-grid">
+
+                        <div>
+
+                            <span>
+                                Name
+                            </span>
+
+                            <strong id="details-name">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Phone
+                            </span>
+
+                            <strong id="details-phone">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                State
+                            </span>
+
+                            <strong id="details-state">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Address
+                            </span>
+
+                            <strong id="details-address">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ORDER ITEMS -->
+
+                <div class="details-block">
+
+                    <h3>
+                        Order Items
+                    </h3>
+
+
+                    <div id="details-items">
+
+                        <!-- Order items will appear here -->
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TOTAL -->
+
+                <div class="details-total">
+
+                    <span>
+                        Total Amount
+                    </span>
+
+                    <strong id="details-total">
+                        ₦0
+                    </strong>
+
+                </div>
+
+
+
+                <!-- STATUS ACTIONS -->
+
+                <div class="order-status-actions">
+
+                    <button
+                        type="button"
+                        id="mark-processing">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        Mark as Processing
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="mark-completed">
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Mark as Completed
+
+                    </button>
+
+                    <button
+                        type="button"
+                        id="delete-order"
+                        class="delete-order-button">
+
+                        <i class="fa-solid fa-trash"></i>
+
+                        Delete Order
+
+                    </button>
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <script type="module" src="/js/admindashboard.js"></script>
+    <script type="module" src="/js/admindashboard2.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medilink | Admin Login</title>
+
+    <link rel="stylesheet" href="/style/adminlogin.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
+
+</head>
+
+
+<body>
+
+    <main class="admin-login-page">
+
+
+        <!-- ========================================
+             LOGIN CARD
+        ======================================== -->
+
+        <section class="admin-login-card">
+
+
+            <!-- BRAND -->
+
+            <div class="admin-brand">
+
+                <div class="admin-logo">
+
+                    <i class="fa-solid fa-briefcase-medical"></i>
+
+                </div>
+
+                <div>
+
+                    <h1>
+                        Medilink
+                    </h1>
+
+                    <span>
+                        Admin Portal
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- HEADING -->
+
+            <div class="login-heading">
+
+                <h2>
+                    Administrator Login
+                </h2>
+
+                <p>
+                    Sign in to manage Medilink orders.
+                </p>
+
+            </div>
+
+
+            <!-- LOGIN FORM -->
+
+            <form id="admin-login-form">
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="admin-email">
+                        Email Address
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="admin-email"
+                            placeholder="Enter your email address"
+                            autocomplete="email"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="admin-password">
+                        Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="admin-password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required>
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="password-toggle"
+                            aria-label="Show password">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ERROR MESSAGE -->
+
+                <p
+                    id="login-error"
+                    class="login-error">
+                </p>
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    id="admin-login-button">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    Login
+
+                </button>
+
+
+            </form>
+
+
+            <!-- RETURN TO WEBSITE -->
+
+            <a
+                href="/html/homepage.html"
+                class="back-to-site">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Medilink
+
+            </a>
+
+
+        </section>
+
+
+    </main>
+
+    <script type="module" src="/js/adminlogin.js"></script>
+
+</body>
+
+</html>
