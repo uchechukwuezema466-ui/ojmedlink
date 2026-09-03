@@ -10,7 +10,7 @@ import {
     getDocs
 } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
 
-import { firebaseConfig } from "./firebaseconfig.js";
+import { firebaseconfig } from "./firebaseconfig.js";
 
 
 // ========================================

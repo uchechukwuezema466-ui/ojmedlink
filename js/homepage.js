@@ -77,3 +77,44 @@ if (cart) {
     });
 
 }
+
+// ========================================
+// HERO IMAGE SLIDER
+// ========================================
+
+const heroSlide =
+    document.querySelector("#hero-slide");
+
+
+const heroImages = [
+
+    "/image/hero1.png",
+
+    "/image/hero2.jpg",
+
+    "/image/hero3.png"
+
+];
+
+
+let currentHeroImage = 0;
+
+
+if (heroSlide) {
+
+    setInterval(function () {
+
+        currentHeroImage++;
+
+        if (currentHeroImage >= heroImages.length) {
+
+            currentHeroImage = 0;
+
+        }
+
+        heroSlide.src =
+            heroImages[currentHeroImage];
+
+    }, 4000);
+
+}
